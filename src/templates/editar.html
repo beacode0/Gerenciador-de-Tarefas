@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Tarefa</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✏️ Editar Tarefa</h1>
+
+    <form method="POST">
+
+        <label>Título</label>
+
+        <input
+            type="text"
+            name="titulo"
+            value="{{ tarefa.titulo }}"
+            required>
+
+        <label>Descrição</label>
+
+        <textarea
+            name="descricao">{{ tarefa.descricao }}</textarea>
+
+        <button type="submit">
+            Salvar Alterações
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

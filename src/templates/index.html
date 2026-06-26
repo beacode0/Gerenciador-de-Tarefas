@@ -55,6 +55,16 @@ e aumente sua produtividade..</p>
 
                     <span>Status: {{ tarefa.status }}</span>
 
+                    <br><br>
+
+                    <div class="acoes">
+
+    <a class="btn-editar"
+       href="{{ url_for('editar', id=tarefa.id) }}">
+        ✏️ Editar
+    </a>
+
+</div>
                 </div>
 
             {% endfor %}

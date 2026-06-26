@@ -66,6 +66,15 @@ Além disso, foi criada a listagem dinâmica das tarefas cadastradas na página 
 
 Também foi realizada a estilização da interface utilizando CSS, proporcionando uma experiência visual mais agradável e intuitiva para o usuário.
 
+
+## Etapa 4 – Edição de Tarefas
+
+Nesta etapa foi implementada a funcionalidade de edição das tarefas cadastradas.
+
+Foi criada uma rota específica para localizar a tarefa pelo seu identificador, permitindo alterar o título e a descrição. Após a atualização, as alterações são gravadas no banco de dados e exibidas imediatamente na página inicial.
+
+Também foi realizada uma melhoria na interface, adicionando um botão de edição com estilo compatível com a identidade visual do sistema Organiza+.
+
 ## Autor
 
 Beatriz Alves Santos

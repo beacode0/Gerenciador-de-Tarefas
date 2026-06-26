@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 
 # Importo o banco de dados e a classe Tarefa criados no models.py
 from models import db, Tarefa
@@ -53,6 +53,28 @@ def index():
         'index.html',
         tarefas=tarefas
     )
+    
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+def editar(id):
+    """
+    Permite editar uma tarefa existente.
+    """
+
+    tarefa = Tarefa.query.get_or_404(id)
+
+    if request.method == 'POST':
+
+        tarefa.titulo = request.form['titulo']
+        tarefa.descricao = request.form['descricao']
+
+        db.session.commit()
+
+        return redirect('/')
+
+    return render_template(
+        'editar.html',
+        tarefa=tarefa
+    )   
 
 
 if __name__ == '__main__':

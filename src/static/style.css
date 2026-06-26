@@ -103,3 +103,24 @@ h2 {
     font-weight: bold;
     color: #689986;
 }
+
+/* Área dos botões dos cards */
+.acoes {
+    margin-top: 15px;
+}
+
+/* Botão Editar */
+.btn-editar {
+    display: inline-block;
+    background-color: #7DAF9C;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-editar:hover {
+    background-color: #689986;
+}
