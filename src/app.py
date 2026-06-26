@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect
 
 # Importo o banco de dados e a classe Tarefa criados no models.py
 from models import db, Tarefa
@@ -19,9 +19,40 @@ db.init_app(app)
 with app.app_context():
     db.create_all()
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index.html')
+    """
+    Esta rota é responsável por exibir a página inicial
+    e cadastrar uma nova tarefa.
+    """
+
+    # Se o usuário clicar no botão "Cadastrar"
+    if request.method == 'POST':
+
+        # Recebo os dados enviados pelo formulário.
+        titulo = request.form['titulo']
+        descricao = request.form['descricao']
+
+        # Crio um objeto da classe Tarefa.
+        nova_tarefa = Tarefa(
+            titulo=titulo,
+            descricao=descricao
+        )
+
+        # Salvo a tarefa no banco de dados.
+        db.session.add(nova_tarefa)
+        db.session.commit()
+
+        # Após salvar, volto para a página inicial.
+        return redirect('/')
+
+    # Busco todas as tarefas cadastradas.
+    tarefas = Tarefa.query.all()
+
+    return render_template(
+        'index.html',
+        tarefas=tarefas
+    )
 
 
 if __name__ == '__main__':

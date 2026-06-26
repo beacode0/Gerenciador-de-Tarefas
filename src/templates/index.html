@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <title>Gerenciador de Tarefas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organiza+ - Gerenciador de Tarefas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
 
-    <h1>Gerenciador de Tarefas</h1>
+    <div class="container">
 
-    <p>Sistema em desenvolvimento.</p>
+        <h1>📋 Organiza+</h1>
+        <p class="subtitulo">Organize suas tarefas, acompanhe seu progresso
+e aumente sua produtividade..</p>
+
+        <form method="POST">
+
+            <label>Título da tarefa</label>
+
+            <input
+                type="text"
+                name="titulo"
+                placeholder="Digite o título da tarefa"
+                required>
+
+            <label>Descrição</label>
+
+            <textarea
+                name="descricao"
+                placeholder="Digite uma descrição"></textarea>
+
+            <button type="submit">
+                Cadastrar Tarefa
+            </button>
+
+        </form>
+
+        <hr>
+
+        <h2>Minhas Tarefas</h2>
+
+        {% if tarefas %}
+
+            {% for tarefa in tarefas %}
+
+                <div class="card">
+
+                    <h3>{{ tarefa.titulo }}</h3>
+
+                    <p>{{ tarefa.descricao }}</p>
+
+                    <span>Status: {{ tarefa.status }}</span>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>Nenhuma tarefa cadastrada.</p>
+
+        {% endif %}
+
+    </div>
 
 </body>
+
 </html>

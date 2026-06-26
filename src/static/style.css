@@ -1,4 +1,105 @@
-body{
-    font-family: Arial, sans-serif;
-    margin: 40px;
+/* Configuração geral da página */
+body {
+    margin: 0;
+    padding: 40px;
+    background-color: #F5F7F4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Área principal */
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Título */
+h1 {
+    color: #355C4D;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+/* Subtítulo */
+.subtitulo {
+    text-align: center;
+    color: #5C5C5C;
+    margin-bottom: 35px;
+}
+
+/* Formulário */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Campos */
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    border: 1px solid #D8E6DD;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+/* Área de descrição */
+textarea {
+    resize: none;
+    height: 100px;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #7DAF9C;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+/* Efeito ao passar o mouse */
+button:hover {
+    background-color: #689986;
+}
+
+/* Título da lista */
+h2 {
+    margin-top: 35px;
+    color: #355C4D;
+}
+
+/* Card da tarefa */
+.card {
+    background: white;
+    border-left: 6px solid #7DAF9C;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Título da tarefa */
+.card h3 {
+    margin-top: 0;
+    color: #355C4D;
+}
+
+/* Texto */
+.card p {
+    color: #5C5C5C;
+}
+
+/* Status */
+.card span {
+    font-weight: bold;
+    color: #689986;
 }

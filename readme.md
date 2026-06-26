@@ -46,6 +46,26 @@ Nesta etapa foi realizada a configuração do ambiente de desenvolvimento para i
 
 Com essa estrutura preparada, o projeto está pronto para iniciar o desenvolvimento das funcionalidades do sistema, começando pela modelagem do banco de dados e implementação do cadastro de tarefas.
 
+
+### Etapa 2 – Configuração do Banco de Dados
+
+Nesta etapa foi realizada a configuração do banco de dados utilizando SQLite em conjunto com o Flask-SQLAlchemy.
+
+Também foi criada a classe `Tarefa`, responsável por representar as informações de cada tarefa cadastrada no sistema. Inicialmente, foram definidos os campos de identificação, título, descrição e status.
+
+Além disso, foi configurada a criação automática do banco de dados e das tabelas sempre que a aplicação for executada pela primeira vez, permitindo que o sistema esteja preparado para armazenar as informações dos usuários.
+
+
+### Etapa 3 – Cadastro e Listagem de Tarefas
+
+Nesta etapa foi implementada a principal funcionalidade do sistema: o cadastro de tarefas.
+
+Foi desenvolvido um formulário para que o usuário possa informar o título e a descrição da tarefa. Após o envio, as informações são armazenadas no banco de dados SQLite utilizando o Flask-SQLAlchemy.
+
+Além disso, foi criada a listagem dinâmica das tarefas cadastradas na página inicial, permitindo visualizar todas as informações registradas no sistema de forma organizada.
+
+Também foi realizada a estilização da interface utilizando CSS, proporcionando uma experiência visual mais agradável e intuitiva para o usuário.
+
 ## Autor
 
 Beatriz Alves Santos
