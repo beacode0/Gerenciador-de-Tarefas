@@ -124,3 +124,84 @@ h2 {
 .btn-editar:hover {
     background-color: #689986;
 }
+
+/* Botão Excluir */
+.btn-excluir {
+
+    display: inline-block;
+
+    background-color: #D97A7A;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 16px;
+
+    border-radius: 8px;
+
+    margin-left: 8px;
+
+    transition: .3s;
+
+    font-size: 14px;
+
+}
+
+.btn-excluir:hover {
+
+    background-color: #BF5A5A;
+
+}
+
+/* Área dos status */
+.status {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Status pendente */
+.pendente {
+    background-color: #FFF4CC;
+    color: #9A7A00;
+}
+
+/* Status concluída */
+.concluida {
+    background-color: #DDF5E5;
+    color: #2F6F44;
+}
+
+/* Botão Concluir */
+.btn-concluir {
+
+    display: inline-block;
+
+    background-color: #5AA469;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 4px 16px;
+
+    border-radius: 8px;
+
+    margin-left: 8px;
+
+    transition: .3s;
+
+    font-size: 14px;
+
+}
+
+.btn-concluir:hover {
+
+    background-color: #4A8D59;
+
+}
+

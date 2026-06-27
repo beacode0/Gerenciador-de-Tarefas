@@ -76,6 +76,40 @@ def editar(id):
         tarefa=tarefa
     )   
 
+@app.route('/excluir/<int:id>')
+def excluir(id):
+    """
+    Remove uma tarefa do banco de dados.
+    """
+
+    # Procura a tarefa pelo ID.
+    tarefa = Tarefa.query.get_or_404(id)
+
+    # Remove a tarefa.
+    db.session.delete(tarefa)
+
+    # Salva a alteração.
+    db.session.commit()
+
+    # Retorna para a página inicial.
+    return redirect('/')
+
+@app.route('/concluir/<int:id>')
+def concluir(id):
+    """
+    Altera o status da tarefa para Concluída.
+    """
+
+    # Procura a tarefa pelo ID.
+    tarefa = Tarefa.query.get_or_404(id)
+
+    # Atualiza o status.
+    tarefa.status = "Concluída"
+
+    # Salva no banco.
+    db.session.commit()
+
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run(debug=True)

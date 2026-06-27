@@ -75,6 +75,14 @@ Foi criada uma rota específica para localizar a tarefa pelo seu identificador, 
 
 Também foi realizada uma melhoria na interface, adicionando um botão de edição com estilo compatível com a identidade visual do sistema Organiza+.
 
+## Etapa 5 – Conclusão de Tarefas
+
+Nesta etapa foi implementada a funcionalidade de conclusão de tarefas.
+
+Foi criada uma rota responsável por alterar o status de uma tarefa para "Concluída". A interface foi atualizada para exibir o status por meio de selos coloridos, facilitando a identificação visual das tarefas pendentes e concluídas.
+
+Também foi adicionado um botão para marcar tarefas como concluídas, tornando o gerenciamento mais prático e intuitivo para o usuário.
+
 ## Autor
 
 Beatriz Alves Santos

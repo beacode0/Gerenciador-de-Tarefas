@@ -53,7 +53,19 @@ e aumente sua produtividade..</p>
 
                     <p>{{ tarefa.descricao }}</p>
 
-                    <span>Status: {{ tarefa.status }}</span>
+                    {% if tarefa.status == "Pendente" %}
+
+    <span class="status pendente">
+        🟡 Pendente
+    </span>
+
+{% else %}
+
+    <span class="status concluida">
+        🟢 Concluída
+    </span>
+
+{% endif %}
 
                     <br><br>
 
@@ -64,7 +76,22 @@ e aumente sua produtividade..</p>
         ✏️ Editar
     </a>
 
+    <a class="btn-excluir"
+       href="{{ url_for('excluir', id=tarefa.id) }}"
+       onclick="return confirm('Tem certeza que deseja excluir esta tarefa?')">
+        🗑️ Excluir
+    </a>
+
 </div>
+
+{% if tarefa.status == "Pendente" %}
+
+<a class="btn-concluir"
+   href="{{ url_for('concluir', id=tarefa.id) }}">
+    ✅ Concluir
+</a>
+
+{% endif %}
                 </div>
 
             {% endfor %}
