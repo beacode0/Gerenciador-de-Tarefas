@@ -23,6 +23,9 @@ class Tarefa(db.Model):
     # Toda tarefa começa como pendente.
     status = db.Column(db.String(20), default="Pendente")
 
+    # Define a prioridade da tarefa.
+    prioridade = db.Column(db.String(20), default="Média")
+    
     # Armazena automaticamente a data de criação.
     data_criacao = db.Column(db.DateTime, default=datetime.utcnow)
 

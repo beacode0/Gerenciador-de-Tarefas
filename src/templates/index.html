@@ -22,11 +22,18 @@
 <div class="resumo">
 
     <div class="info-card">
+        <h3>{{ total_tarefas }}</h3>
+        <p>Total</p>
+    </div>
 
-        <h3>{{ tarefas|length }}</h3>
+    <div class="info-card">
+        <h3>{{ tarefas_pendentes }}</h3>
+        <p>Pendentes</p>
+    </div>
 
-        <p>Tarefas cadastradas</p>
-
+    <div class="info-card">
+        <h3>{{ tarefas_concluidas }}</h3>
+        <p>Concluídas</p>
     </div>
 
 </div>
@@ -42,13 +49,25 @@
 
             <label>Descrição</label>
 
-            <textarea
-                name="descricao"
-                placeholder="Digite uma descrição"></textarea>
+<textarea
+    name="descricao"
+    placeholder="Digite uma descrição"></textarea>
 
-            <button type="submit">
-                Cadastrar Tarefa
-            </button>
+<label>Prioridade</label>
+
+<select name="prioridade">
+
+    <option value="Baixa">🟢 Baixa</option>
+
+    <option value="Média" selected>🟡 Média</option>
+
+    <option value="Alta">🔴 Alta</option>
+
+</select>
+
+<button type="submit">
+    Cadastrar Tarefa
+</button>
 
         </form>
 
@@ -70,6 +89,27 @@
                         Criada em:
                         {{ tarefa.data_criacao.strftime('%d/%m/%Y às %H:%M') }}
                     </small>
+    <br>
+
+{% if tarefa.prioridade == "Alta" %}
+
+<span class="prioridade alta">
+    🔴 Alta
+</span>
+
+{% elif tarefa.prioridade == "Média" %}
+
+<span class="prioridade media">
+    🟡 Média
+</span>
+
+{% else %}
+
+<span class="prioridade baixa">
+    🟢 Baixa
+</span>
+
+{% endif %}
 
                     {% if tarefa.status == "Pendente" %}
 

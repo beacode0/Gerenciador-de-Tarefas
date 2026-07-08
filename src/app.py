@@ -30,10 +30,12 @@ def index():
 
         titulo = request.form['titulo']
         descricao = request.form['descricao']
+        prioridade = request.form['prioridade']
 
         nova_tarefa = Tarefa(
             titulo=titulo,
-            descricao=descricao
+            descricao=descricao,
+            prioridade=prioridade
         )
 
         db.session.add(nova_tarefa)
