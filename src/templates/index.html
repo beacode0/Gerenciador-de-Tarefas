@@ -13,10 +13,23 @@
 
     <div class="container">
 
-        <h1>📋 Organiza+</h1>
-        <p class="subtitulo">Organize suas tarefas, acompanhe seu progresso
-e aumente sua produtividade..</p>
+       <h1>🌿 Organiza+</h1>
 
+<p class="subtitulo">
+    Organize seu dia, uma tarefa de cada vez.
+</p>
+
+<div class="resumo">
+
+    <div class="info-card">
+
+        <h3>{{ tarefas|length }}</h3>
+
+        <p>Tarefas cadastradas</p>
+
+    </div>
+
+</div>
         <form method="POST">
 
             <label>Título da tarefa</label>
@@ -52,6 +65,11 @@ e aumente sua produtividade..</p>
                     <h3>{{ tarefa.titulo }}</h3>
 
                     <p>{{ tarefa.descricao }}</p>
+                    
+                    <small>
+                        Criada em:
+                        {{ tarefa.data_criacao.strftime('%d/%m/%Y às %H:%M') }}
+                    </small>
 
                     {% if tarefa.status == "Pendente" %}
 

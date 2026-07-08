@@ -22,36 +22,45 @@ with app.app_context():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     """
-    Esta rota é responsável por exibir a página inicial
-    e cadastrar uma nova tarefa.
+    Exibe a página inicial e cadastra novas tarefas.
     """
 
-    # Se o usuário clicar no botão "Cadastrar"
+    # Se o formulário foi enviado
     if request.method == 'POST':
 
-        # Recebo os dados enviados pelo formulário.
         titulo = request.form['titulo']
         descricao = request.form['descricao']
 
-        # Crio um objeto da classe Tarefa.
         nova_tarefa = Tarefa(
             titulo=titulo,
             descricao=descricao
         )
 
-        # Salvo a tarefa no banco de dados.
         db.session.add(nova_tarefa)
         db.session.commit()
 
-        # Após salvar, volto para a página inicial.
         return redirect('/')
 
-    # Busco todas as tarefas cadastradas.
+    # Busca todas as tarefas
     tarefas = Tarefa.query.all()
+
+    # Estatísticas
+    total_tarefas = len(tarefas)
+
+    tarefas_pendentes = len(
+        [t for t in tarefas if t.status == "Pendente"]
+    )
+
+    tarefas_concluidas = len(
+        [t for t in tarefas if t.status == "Concluída"]
+    )
 
     return render_template(
         'index.html',
-        tarefas=tarefas
+        tarefas=tarefas,
+        total_tarefas=total_tarefas,
+        tarefas_pendentes=tarefas_pendentes,
+        tarefas_concluidas=tarefas_concluidas
     )
     
 @app.route('/editar/<int:id>', methods=['GET', 'POST'])
