@@ -77,6 +77,7 @@ def editar(id):
 
         tarefa.titulo = request.form['titulo']
         tarefa.descricao = request.form['descricao']
+        tarefa.prioridade = request.form['prioridade']
 
         db.session.commit()
 

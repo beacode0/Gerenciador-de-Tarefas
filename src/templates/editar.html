@@ -30,6 +30,27 @@
         <textarea
             name="descricao">{{ tarefa.descricao }}</textarea>
 
+        <label>Prioridade</label>
+
+<select name="prioridade">
+
+    <option value="Baixa"
+        {% if tarefa.prioridade == "Baixa" %}selected{% endif %}>
+        🟢 Baixa
+    </option>
+
+    <option value="Média"
+        {% if tarefa.prioridade == "Média" %}selected{% endif %}>
+        🟡 Média
+    </option>
+
+    <option value="Alta"
+        {% if tarefa.prioridade == "Alta" %}selected{% endif %}>
+        🔴 Alta
+    </option>
+
+</select>
+
         <button type="submit">
             Salvar Alterações
         </button>
