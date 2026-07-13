@@ -82,6 +82,55 @@ Nesta etapa foi implementada a funcionalidade de conclusão de tarefas.
 Foi criada uma rota responsável por alterar o status de uma tarefa para "Concluída". A interface foi atualizada para exibir o status por meio de selos coloridos, facilitando a identificação visual das tarefas pendentes e concluídas.
 
 Também foi adicionado um botão para marcar tarefas como concluídas, tornando o gerenciamento mais prático e intuitivo para o usuário.
+ 
+## Etapa 6 – Dashboard do Sistema
+
+Nesta etapa foi desenvolvido um painel de informações para fornecer uma visão geral das tarefas cadastradas no sistema.
+
+Foram implementados três indicadores principais:
+
+- Total de tarefas cadastradas;
+- Quantidade de tarefas pendentes;
+- Quantidade de tarefas concluídas.
+
+Esses dados são calculados automaticamente sempre que uma tarefa é criada, concluída ou removida, permitindo ao usuário acompanhar rapidamente o andamento das suas atividades.
+
+Além da implementação do dashboard, também foram realizadas melhorias na interface do Organiza+, tornando a aplicação mais organizada, agradável e intuitiva para o usuário.
+
+## Etapa 7 – Implementação da Prioridade das Tarefas
+
+Nesta etapa foi iniciada a implementação da funcionalidade de prioridade das tarefas.
+
+Agora, ao cadastrar uma nova tarefa, o usuário pode escolher entre três níveis de prioridade:
+
+- 🟢 Baixa
+- 🟡 Média
+- 🔴 Alta
+
+Essa funcionalidade foi adicionada após o escopo inicial do projeto, simulando uma nova solicitação do cliente e demonstrando a adaptação do sistema a novos requisitos durante o desenvolvimento.
+
+## Etapa 8 – Edição da Prioridade
+
+Foi adicionada a possibilidade de alterar a prioridade de uma tarefa já cadastrada.
+
+Com isso, o usuário pode modificar o título, a descrição e também a prioridade da tarefa, mantendo as informações sempre atualizadas.
+
+## Etapa 9 – Estrutura para Testes Automatizados
+
+Nesta etapa foram implementados testes automatizados utilizando o framework Pytest.
+
+Foi criado um teste para verificar se a página inicial da aplicação responde corretamente (status HTTP 200), garantindo que o sistema esteja acessível e funcionando corretamente.
+
+A utilização de testes automatizados contribui para a qualidade do software, permitindo identificar problemas rapidamente sempre que novas alterações forem realizadas.
+
+## Etapa 10 – Integração Contínua (GitHub Actions)
+
+Foi configurado um workflow utilizando o GitHub Actions para automatizar a execução dos testes da aplicação.
+
+Sempre que um novo código é enviado ao repositório (push) ou um Pull Request é criado, o GitHub instala automaticamente as dependências do projeto e executa os testes implementados com Pytest.
+
+Essa prática auxilia na identificação rápida de erros e garante maior qualidade durante o desenvolvimento.
+
 
 ## Autor
 
