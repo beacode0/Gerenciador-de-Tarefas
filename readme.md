@@ -132,6 +132,15 @@ Sempre que um novo código é enviado ao repositório (push) ou um Pull Request 
 Essa prática auxilia na identificação rápida de erros e garante maior qualidade durante o desenvolvimento.
 
 
+## Etapa 11 – Modelagem UML
+
+Foram elaborados dois diagramas UML para representar a estrutura e o funcionamento do sistema:
+
+- **Diagrama de Casos de Uso:** apresenta as principais funcionalidades disponíveis ao usuário, como cadastrar, visualizar, editar, excluir e concluir tarefas.
+
+- **Diagrama de Classes:** representa a estrutura da classe `Tarefa`, seus atributos e as principais operações realizadas pelo sistema.
+
+A modelagem UML contribuiu para a organização do projeto e facilitou a compreensão da arquitetura da aplicação antes e durante o desenvolvimento.
 ## Autor
 
 Beatriz Alves Santos
